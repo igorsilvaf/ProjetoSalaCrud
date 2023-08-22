@@ -61,3 +61,17 @@ constraint fk_marca FOREIGN key (idmarca) REFERENCES marca(idmarca)
 
 
 );
+
+ create table despesa(
+	  iddespesa serial primary key,
+	  descricao varchar(100) not null,
+	  datadocumento date not null,
+	  valordespesa numeric (15,2) not null,
+	  valorpago numeric(15,2),
+	  	imagemdocumento text 
+					  
+					  
+					  
+					  );
+					  
+	insert into despesa(descricao,datadocumento,valordespesa,valorpago) values('descricao','2023-08-23',20.5,10.5);
