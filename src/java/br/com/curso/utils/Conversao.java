@@ -35,4 +35,28 @@ public class Conversao {
         return novaData;
     }
     
+    public static double valorDinheiro(String valor ){
+    String conversao = valor.substring(2, valor.length());
+    conversao = conversao.replaceAll("[./-]","");
+    conversao = conversao.replace(",",".").trim();
+    return Double.parseDouble(conversao);
+    
+    }
+        public static String valorDinheiro(double valor, String pais){
+           NumberFormat formatter = null;
+           if (pais.equals("BR")){
+              formatter = NumberFormat.getCurrencyInstance();
+                             
+           }else if  (pais.equals("US")){
+               formatter = NumberFormat.getInstance(new Locale("en", "US"));
+               
+           }
+            String moneyString = formatter.format(valor);
+            return moneyString;
+            
+        }
+    
+    
+    
+    
 }
